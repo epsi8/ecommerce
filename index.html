@@ -15,6 +15,13 @@
         padding: 0;
         box-sizing: border-box;
     }
+    .dropdown{
+        position: absolute;
+       left: 600px;
+       top:5px;
+    }
+    
+    
     .navbar{
         display: flex;
         align-items: center;
@@ -51,6 +58,17 @@
         position: sticky;
 
     }
+    .cart {
+      position: absolute;
+      top: 15px;
+      right: 10px;
+    }
+    .hea{
+        position: absolute;
+        top:15px;
+        right:80px;
+    }
+
     .box{
         height: 30px;
         width: 10px;
@@ -182,7 +200,7 @@
         top: 10px;
         left: 50px;
         color:wheat;
-        text-shadow: 0px 2px 30px black;
+        text-shadow: 0px 2px 20px black;
         font-family: "Bebas Neue", sans-serif;
         font-weight:400;
         font-size: 50px;
@@ -190,6 +208,10 @@
 }
 
 /* trending-section-css */
+
+.trending-products{
+    background-color: lightgray;
+}
 .centre-text h2{
     color: #111;
     font-size: 28px;
@@ -208,6 +230,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(260px,auto));
     gap: 2rem;
+    display: flex;
+
 }
 .row{
     position: relative;
@@ -298,44 +322,198 @@
     color: #111;
     text-transform: capitalize;
 }
+.product-text h5{
+    font-size: 10px;
+}
+
 
 
 
     /* Responsive-css */
    
     
-    @media(max-width:630px){
-       nav{
-        display: inline-block;
-        text-align: right;
+    @media(max-width:600px){
+       
+   .cart{
+    
+    position:absolute;
+    top:35px;
+   left:170px;
+   }
+   .hea{
+    position:absolute;
+    top: 35px;
+    left: 140px;
+    
+    
+   }
+    
+      .dropdown button{
+         cursor: pointer;
+         }
+      .dropdown a{
+        display: block;
+        padding: 5px 5px;
+        }
+      .dropdown .content{
+        display: none;
+        position: absolute;
+        background-color: lightgray;
+        font-size: 10px;
+        min-width: 100px;
+      }
+      .dropdown:hover .content{
+        display: block;
 
-       }
-       nav ul{
-        display: inline-block;
-    }
-    nav ul li{
-        display: inline-block;
-        margin-right: 5px;
-
-    }
+      }
+      
+      .dropdown a:hover{
+        background-color: #f3f4f6;
+      }
+      .dropdown{
+        position:absolute;
+        left: 5px;
+        top: 70px;
+      }
     .box{
         position: absolute;
-        top: 50px;
-        left: 100px;
+        top:68px;
+        left: 160px;
+       
+        
+    }
+    .box input{
+        width:900px;
+    }
+    .main-text h1{
+        font-size: 20px;
+    }
+    section{
+        padding: 70% 50%;
+        
+    }
+    .title{
+        position: absolute;
+        left: 90px;
+    }
+   
+    .img1{
+       position: absolute;
+       left: 0;
+       top:130px ;
+       right:200px;
+       width: 200px;
+        height:270px;
+    }
+    .img2{
+        position: absolute;
+        left:80px;
+        top:130px;
+        width: 200px;
+        height:270px;
+    }
+    .main-text{
+        position: absolute;
+        left: 50px;
+        top: 250px;
+    }
+    .main-text p{
+        font-size: 10px;
+    } 
+    .down-arrow{
+        position: absolute;
+        left: 10px;
+        top: 600px;
+
+    }
+    .main-btn{
+        font-size: 10px;
+    }
+   
+    /* trending-products-section */
+    *{
+    box-sizing: border-box;
+}
+section{
+    padding:91.55% 50%;
+   
+}
+   
+    .centre-text h2{
+        position: absolute;
+        left:100px;
+        top:750px;
+        font-size: 15px;
+
+    }
+    .heart{
+    position: absolute;
+    left: 80px;
+}
+.rating i{
+   font-size:10px;
+}
+.price h4{
+    font-size: 10px;
+    
+}
+.price p{
+   font-size:10px;
+   
+}
+.product-text h5{
+    font-size: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.products{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      position: absolute;
+      left: 0px;
+      top: 780px;
+   
+}
+.row{
+   display:flex;
+   flex-wrap: wrap;
+
+}
+.row img{
+    width: 120px;
+    height: 150px;
+
+}
+/* Contact-Section */
+
+.contact-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    position: absolute;
+    left: 0;
+    top:1500px ;
+}  
+.contact-info h4{
+    font-size: 8px;    
+}
+.contact-info p{
+    font-size: 8px;
+}
+.contact{
+    padding: 50% 50%;
+}
     }
     
+
     
 
 </style>
 <body>
 
-    <script>
-        const container = document.querySelector("container");
-
-        window.addEventListener("scroll", function(){
-             container.classList.toggle("sticky",this.window.scrollY>0);
-        })
-    </script>
+   
     
     <div class="container">
      <div class="navbar">
@@ -344,15 +522,26 @@
         <div class="title">S Store</div>
         <nav>
             <ul>
+                <div class="dropdown">
+                    <button><i class='bx bx-menu'></i></button>
+                    <div class="content">
                 <li><a href="">men</a></li>
                 <li><a href="">women</a></li>
                 <li><a href="">kids</a></li>
                 <li><a href="">profile</a></li>
-                <li><a href=""><i class='bx bxs-heart '></i></a></li>
-                <li><a href=""><i class='bx bxs-shopping-bag '></i></a></li>
-                <li><a href=""><i class='bx bxs-cart'></i></a></li>
+            </div>
+        </div>
+        
+        <div class="cart">
+               <div class="hea"><li><a href=""><i class='bx bx-heart bx-sm' ></i></a></li></div>
+               <div class="cart"><li><a href=""><i class='bx bx-cart bx-sm'></i></a></li></div>
+             </div> 
+             
             </ul>
         </nav>
+       
+
+
      <div class="box">
         <input type="text" placeholder="search...">
         <i class='bx bx-search'></i>
@@ -360,10 +549,11 @@
       
      </div>
      </div>  
-     <div class="img1" ></div>
-     <div class="img2"></div>
+     
      <section class="main-home">
         <div class="main-text">
+            <div class="img1" ></div>
+            <div class="img2"></div>
             <h5>Top Trends</h5>
             <h1>NEW COLLECTION<br> 2024</h1>
             <p>Fashion Makes You To Look Even More Attractive</p>
@@ -381,6 +571,7 @@
         </div>
         <div class="products">
             <div class="row">
+                <div class="coloumn1">
                 <img src="Screenshot 2024-09-24 155830.png" alt="">
                 <div class="product-text">
                     <h5>Sale</h5>
@@ -391,15 +582,18 @@
                     <i class='bx bx-star'></i>
                     <i class='bx bx-star'></i>
                     <i class='bx bx-star'></i>
-                    <i class='bx bxs-star-half'></i>
+                    <i class='bx bx-star'></i>
+                   
                  </div>
 
                  <div class="price">
                     <h4>Party Wear Dresses for Women</h4>
                     <p>Under 999/-</p>
                  </div>
+                 </div>
         </div>
         <div class="row">
+            <div class="coloumn2">
             <img src="Screenshot 2024-09-24 154958.png" alt="">
             <div class="product-text">
                 <h5>HOT</h5>
@@ -410,15 +604,17 @@
                 <i class='bx bx-star'></i>
                 <i class='bx bx-star'></i>
                 <i class='bx bx-star'></i>
-                <i class='bx bxs-star-half'></i>
+                <i class='bx bx-star'></i>
              </div>
 
              <div class="price">
                 <h4>Mens's T Shirts</h4>
                 <p>Under 600/-</p>
              </div>
+             </div>
     </div>
     <div class="row">
+        <div class="coloumn3">
         <img src="Screenshot 2024-09-24 154930.png" alt="">
         <div class="product-text">
             <h5>HOT</h5>
@@ -429,15 +625,17 @@
             <i class='bx bx-star'></i>
             <i class='bx bx-star'></i>
             <i class='bx bx-star'></i>
-            <i class='bx bxs-star-half'></i>
+            <i class='bx bx-star'></i>
          </div>
 
          <div class="price">
             <h4>Men's Shirt</h4>
             <p> Under 850/-</p>
          </div>
+         </div>
 </div>
 <div class="row">
+    <div class="coloumn4">
     <img src="Screenshot 2024-09-24 162355.png" alt="">
     <div class="product-text">
         <h5>Sale</h5>
@@ -448,15 +646,17 @@
         <i class='bx bx-star'></i>
         <i class='bx bx-star'></i>
         <i class='bx bx-star'></i>
-        <i class='bx bxs-star-half'></i>
+        <i class='bx bx-star'></i>
      </div>
 
      <div class="price">
         <h4> Sarees For Women</h4>
         <p>Under 1999/-</p>
      </div>
+     </div>
 </div>
 <div class="row">
+    <div class="coloumn5">
     <img src="Screenshot 2024-09-24 164929.png" alt="">
     <div class="product-text">
         <h5>Sale</h5>
@@ -467,15 +667,17 @@
         <i class='bx bx-star'></i>
         <i class='bx bx-star'></i>
         <i class='bx bx-star'></i>
-        <i class='bx bxs-star-half'></i>
+        <i class='bx bx-star'></i>
      </div>
 
      <div class="price">
         <h4> Women's Kurtis</h4>
         <p>under 999/-</p>
      </div>
+     </div>
 </div>
 <div class="row">
+    <div class="coloumn6">
     <img src="Screenshot 2024-09-24 162038.png" alt="">
     <div class="product-text">
         <h5>Sale</h5>
@@ -486,13 +688,14 @@
         <i class='bx bx-star'></i>
         <i class='bx bx-star'></i>
         <i class='bx bx-star'></i>
-        <i class='bx bxs-star-half'></i>
+        <i class='bx bx-star'></i>
      </div>
 
      <div class="price">
         <h4> T Shirts for Women</h4>
         <p>Under 299/-</p>
      </div>
+    </div>
      
 
         </div>
